@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
 });
 
 async function makeC02Graph() {
-   const data = await d3.csv('http://localhost:8000/energy-use-C02-world.csv')
+   const data = await d3.csv('energy-use-C02-world.csv')
    const minYear = d3.min(data, function(d) { return d.Year; });
    const maxYear = d3.max(data, function(d) { return d.Year; });
    const minC02 = d3.min(data, function(d) { return d["CO2 (kt)"]; });
@@ -84,7 +84,7 @@ async function makeC02Graph() {
 
 async function makeTempGraph() {
    console.log("makeTempGraph()")
-   const data = await d3.csv('http://localhost:8000/epa-earth-temp.csv')
+   const data = await d3.csv('epa-earth-temp.csv')
    var minYear = d3.min(data, function(d) { return d.Year; });
    var maxYear = d3.max(data, function(d) { return d.Year; });
    var minC02 = d3.min(data, function(d) { return +d["Earth's surface (land and ocean)"]; });
